@@ -1,0 +1,8 @@
+{
+  "name": "linkdropdemobot",
+  "version": "1.0.0",
+  "description": "Linkdrop Demo Bot",
+  "main": "index.js",
+  "author": "Amir Jumaniyazov - <amiromayer@gmail.com>",
+  "license": "MIT"
+}
