@@ -13,12 +13,14 @@ class InviteLinkService {
 
   async create (userId) {
     try {
-      const {
+      let {
         url,
         linkId,
         linkKey,
         linkdropSignerSignature
       } = await linkdropService.generateLink()
+
+      url = `${url}&dappId=zrx-instant`
 
       const inviteLink = new InviteLink({ userId, linkId, linkKey, url })
       await inviteLink.save()

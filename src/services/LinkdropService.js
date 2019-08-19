@@ -10,7 +10,8 @@ class LinkdropService {
       ).address,
       chain: process.env.CHAIN,
       jsonRpcUrl: process.env.JSON_RPC_URL,
-      factoryAddress: process.env.LINKDROP_FACTORY_ADDRESS
+      factoryAddress: process.env.LINKDROP_FACTORY_ADDRESS,
+      claimHost: 'https://demo.wallet.linkdrop.io'
     })
   }
 
