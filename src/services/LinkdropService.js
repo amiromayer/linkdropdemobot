@@ -5,9 +5,7 @@ require('dotenv').config()
 class LinkdropService {
   constructor () {
     this.sdk = new LinkdropSDK({
-      linkdropMasterAddress: new ethers.Wallet(
-        process.env.LINKDROP_MASTER_PRIVATE_KEY
-      ).address,
+      linkdropMasterAddress: process.env.LINKDROP_MASTER_ADDRESS,
       chain: process.env.CHAIN,
       jsonRpcUrl: process.env.JSON_RPC_URL,
       factoryAddress: process.env.LINKDROP_FACTORY_ADDRESS,
