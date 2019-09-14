@@ -6,7 +6,8 @@
   "author": "Amir Jumaniyazov - <amiromayer@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npx babel-node index"
+    "start": "npx babel-node index",
+    "server": "pm2 start --name linkdrop-demo-bot npm -- run start"
   },
   "dependencies": {
     "@linkdrop/sdk": "^1.0.33",

@@ -1,7 +1,8 @@
 import mongoose from 'mongoose'
+require('dotenv').config()
 
 const MONGODB_URI =
-  process.env.MONGODB_URI || `mongodb://localhost:27017/linkdropdemobotdb`
+  process.env.MONGODB_URI || `mongodb://localhost:27017/linkdropdemobot`
 
 const connectDB = async () => {
   try {
