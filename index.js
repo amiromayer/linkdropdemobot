@@ -15,6 +15,8 @@ const state = {}
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 bot.start(async ctx => {
+  console.log("Started bot with: ", ctx.from)
+  
   ctx.reply(
     `🤑 Welcome onboard, ${ctx.from.first_name}`,
     Markup.inlineKeyboard([
@@ -58,7 +60,7 @@ bot.start(async ctx => {
         )
 
         ctx.answerCbQuery('🥳 Here is your claim link:')
-        return ctx.reply(inviteLink.url)
+	return ctx.reply(`Claim tokens and try a dapp: ${inviteLink.shortUrl}`)
       }
 
       let inviteLink = await inviteLinkService.find(userId)
@@ -74,8 +76,8 @@ bot.start(async ctx => {
         inviteLink
       )
 
-      ctx.answerCbQuery('🥳 Here is your claim link:')
-      return ctx.reply(inviteLink.url)
+	ctx.answerCbQuery('🥳 Here is your claim link:')
+	return ctx.reply(`Claim tokens and try a dapp: ${inviteLink.shortUrl}`)
     } catch (error) {
       console.error(error)
     }
