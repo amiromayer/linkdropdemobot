@@ -1,7 +1,7 @@
 import InviteLink from '../models/InviteLink'
 import { LinkdropSDK } from '@linkdrop/sdk'
-import linkdropService from './LinkdropService'
-import bitlyService from './BitlyService'
+import linkdropService from './linkdropService'
+import bitlyService from './bitlyService'
 
 class InviteLinkService {
   async find (userId) {
