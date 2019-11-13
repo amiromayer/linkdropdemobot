@@ -10,6 +10,8 @@
     "server": "pm2 start --name rebalance-bot npm -- run start"
   },
   "dependencies": {
+    "@linkdrop-widget/sdk": "^0.0.6",
+    "@linkdrop/safe-module-contracts": "^0.0.2",
     "@linkdrop/sdk": "^1.0.33",
     "dotenv": "^8.1.0",
     "ethers": "^4.0.33",
