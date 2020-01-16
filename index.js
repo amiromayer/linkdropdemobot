@@ -62,7 +62,7 @@ bot.start(async ctx => {
         )
 
         ctx.answerCbQuery('🥳 Here is your claim link:')
-        return ctx.reply(`Claim tokens and try a dapp: ${inviteLink.shortUrl}`)
+        return ctx.reply(inviteLink.shortUrl)
       }
 
       let inviteLink = await inviteLinkService.find(userId)
