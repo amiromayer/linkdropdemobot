@@ -22,7 +22,10 @@ class InviteLinkService {
       } = await linkdropService.generateLink()
 
       const { last_name, first_name, language_code, username } = user
-      const shortUrl = await bitlyService.shortenUrl(url)
+
+      let shortUrl
+
+      if (process.env.BITLY_TOKEN) shortUrl = await bitlyService.shortenUrl(url)
 
       const inviteLink = new InviteLink({
         userId,

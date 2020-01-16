@@ -61,7 +61,9 @@ bot.start(async ctx => {
         )
 
         ctx.answerCbQuery('🥳 Here is your claim link:')
-        return ctx.reply(inviteLink.shortUrl)
+        return ctx.reply(
+          inviteLink.shortUrl ? inviteLink.shortUrl : inviteLink.url
+        )
       }
 
       let inviteLink = await inviteLinkService.find(userId)
