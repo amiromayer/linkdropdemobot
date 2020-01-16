@@ -1,15 +1,17 @@
-import { LinkdropSDK } from '@linkdrop/sdk'
+import SDK from '@linkdrop/sdk'
 import { ethers } from 'ethers'
+
 require('dotenv').config()
 
 class LinkdropService {
   constructor () {
-    this.sdk = new LinkdropSDK({
-      linkdropMasterAddress: process.env.LINKDROP_MASTER_ADDRESS,
-      chain: process.env.CHAIN,
-      jsonRpcUrl: process.env.JSON_RPC_URL,
-      factoryAddress: process.env.LINKDROP_FACTORY_ADDRESS,
-      claimHost: 'https://demo.wallet.linkdrop.io'
+    this.sdk = new SDK({
+      claimHost: process.env.CLAIM_HOST,
+      linkdropMasterAddress: new ethers.Wallet(
+        process.env.LINKDROP_MASTER_PRIVATE_KEY
+      ).address,
+      factoryAddress: process.env.FACTORY_ADDRESS,
+      chain: process.env.CHAIN
     })
   }
 
