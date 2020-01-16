@@ -10,7 +10,7 @@ class LinkdropService {
       linkdropMasterAddress: new ethers.Wallet(
         process.env.LINKDROP_MASTER_PRIVATE_KEY
       ).address,
-      factoryAddress: process.env.FACTORY_ADDRESS,
+      factoryAddress: process.env.LINKDROP_FACTORY_ADDRESS,
       chain: process.env.CHAIN
     })
   }
