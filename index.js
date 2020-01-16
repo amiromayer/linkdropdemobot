@@ -9,7 +9,6 @@ import inviteLinkService from './src/services/inviteLinkService'
 require('dotenv').config()
 const app = express()
 
-// Connect database
 connectDB()
 
 const state = {}
@@ -79,7 +78,7 @@ bot.start(async ctx => {
       )
 
       ctx.answerCbQuery('🥳 Here is your claim link:')
-      return ctx.reply(`Claim tokens and try a dapp: ${inviteLink.shortUrl}`)
+      return ctx.reply(inviteLink.shortUrl)
     } catch (error) {
       console.error(error)
     }
